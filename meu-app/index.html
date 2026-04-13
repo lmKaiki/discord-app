@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Meu App</title>
-</head>
-
-<body>
-
-<h1>Meu app 🚀</h1>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
 <script>
-const supabaseUrl = "https://xdyrsqduaytfrzofbfms.supabase.co"
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhkeXJzcWR1YXl0ZnJ6b2ZiZm1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzc5ODcsImV4cCI6MjA5MTY1Mzk4N30.6HADsx_0j6bnZ8GfhefyHNb-NTg7wCcL0qRKIchyQzA"
+const supabaseUrl = "https://xdyrsqduaytfrzofbfms.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhkeXJzcWR1YXl0ZnJ6b2ZiZm1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzc5ODcsImV4cCI6MjA5MTY1Mzk4N30.6HADsx_0j6bnZ8GfhefyHNb-NTg7wCcL0qRKIchyQzA";
 
-const client = supabase.createClient(supabaseUrl, supabaseKey)
-
-console.log("Supabase conectado!")
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 </script>
-
-</body>
-</html>
