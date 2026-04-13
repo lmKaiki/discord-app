@@ -4,5 +4,41 @@
 const supabaseUrl = "https://xdyrsqduaytfrzofbfms.supabase.co";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhkeXJzcWR1YXl0ZnJ6b2ZiZm1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzc5ODcsImV4cCI6MjA5MTY1Mzk4N30.6HADsx_0j6bnZ8GfhefyHNb-NTg7wCcL0qRKIchyQzA";
 
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+// 👇 AQUI fica o send()
+async function send() {
+  const input = document.getElementById("input");
+  const msg = input.value.trim();
+
+  if (!msg) return;
+
+  await supabaseClient
+    .from("messages")
+    .insert([{ text: msg }]);
+
+  input.value = "";
+
+  loadMessages();
+}
+
+// 👇 AQUI carrega mensagens
+async function loadMessages() {
+  const { data } = await supabaseClient
+    .from("messages")
+    .select("*")
+    .order("id", { ascending: true });
+
+  const box = document.getElementById("messages");
+  box.innerHTML = "";
+
+  data.forEach(msg => {
+    const div = document.createElement("div");
+    div.className = "msg";
+    div.innerText = msg.text;
+    box.appendChild(div);
+  });
+}
+
+loadMessages();
 </script>
