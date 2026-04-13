@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meu App</title>
+</head>
+
+<body>
+
+<h1>Meu app</h1>
+
+<!-- 🔴 AQUI começa o Supabase -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabaseUrl = "https://xxxx.supabase.co"
+const supabaseKey = "anon-key"
+
+const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+console.log("Supabase conectado!")
+</script>
+
+<!-- 🔴 AQUI termina -->
+
+</body>
+</html>
