@@ -1,124 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Digital Obsidian Chat</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0c0e13;
-      color: white;
-      display: flex;
-      height: 100vh;
-    }
-
-    .sidebar {
-      width: 220px;
-      background: #191c20;
-      padding: 10px;
-    }
-
-    .channel {
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 8px;
-    }
-
-    .channel:hover {
-      background: #282a2f;
-    }
-
-    .chat {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      background: #111318;
-    }
-
-    .messages {
-      flex: 1;
-      padding: 15px;
-      overflow-y: auto;
-    }
-
-    .msg {
-      background: #191c20;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 10px;
-    }
-
-    .input {
-      display: flex;
-      padding: 10px;
-      background: #191c20;
-    }
-
-    input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #111318;
-      color: white;
-    }
-
-    button {
-      margin-left: 10px;
-      padding: 10px;
-      background: #5865f2;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      cursor: pointer;
-    }
-  </style>
+  <title>Meu App</title>
 </head>
 
 <body>
 
-<div class="sidebar">
-  <h3>Servers</h3>
-  <div class="channel"># general</div>
-</div>
+<h1>Meu app 🚀</h1>
 
-<div class="chat">
-
-  <div class="messages" id="messages">
-    <div class="msg">👋 Welcome to Digital Obsidian</div>
-  </div>
-
-  <div class="input">
-    <input id="input" placeholder="Type message..." />
-    <button onclick="send()">Send</button>
-  </div>
-
-</div>
-
-<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-const supabaseUrl = "https://xxxx.supabase.co"
-const supabaseKey = "anon-key"
-const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+const supabaseUrl = "https://xdyrsqduaytfrzofbfms.supabase.co"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhkeXJzcWR1YXl0ZnJ6b2ZiZm1zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYwNzc5ODcsImV4cCI6MjA5MTY1Mzk4N30.6HADsx_0j6bnZ8GfhefyHNb-NTg7wCcL0qRKIchyQzA"
 
-// ENVIAR MENSAGEM (local primeiro)
-function send() {
-  const input = document.getElementById("input")
-  const text = input.value
+const client = supabase.createClient(supabaseUrl, supabaseKey)
 
-  if (!text) return
-
-  const div = document.createElement("div")
-  div.className = "msg"
-  div.innerText = text
-
-  document.getElementById("messages").appendChild(div)
-
-  input.value = ""
-}
+console.log("Supabase conectado!")
 </script>
 
 </body>
